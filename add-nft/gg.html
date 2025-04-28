@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+<script src="https://kit.fontawesome.com/f47346a7bc.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add NFT</title>
+<style>
+  body {
+    background: url(Group.png);
+    /* background-image: url('image.png'); */
+    font-family: Helvetica;
+    background-color: #2a2a2e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background: linear-gradient(to right, #3b3b3b,#202020);
+    background-color: #333339;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column; /* Changed to column to stack children vertically */
+    align-items: center; /* Align children in the center */
+    max-width: 800px;
+    width: 100%; /* Full width within max-width */
+    position: relative;
+  }
+
+  .content { /* New class for content to be above the button */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .image-upload { 
+    background-color: #262629;
+    width: 350px;
+    height: 350px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .image-upload i {
+    color: white;
+  }
+
+  .image-upload img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .image-upload input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .form-fields {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 30px;
+    padding: 10px; 
+    margin-top: 20px; 
+}
+
+  .input-field {
+    background-color: #1f1f23;
+    border: none;
+    border-radius: 10px;
+    padding: 12px; 
+    margin-bottom: 10px;
+    color: grey;
+    font-size: 16px;
+    font-family: Verdana;
+    height: 5px;
+}
+  
+  #languageSelect {
+    background-color: #1f1f23;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: grey;
+    font-size: 14px;
+    font-family: Verdana;
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 25px 42px 0 0;
+  }
+
+  textarea.input-field {
+    height: 110px;
+}
+
+  #category {
+    background-color: #1f1f23;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 0px 5px 5px;
+    margin-bottom: 10px;
+    color: grey;
+    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .upload-icon {
+    background-image: url('ouy.png'); /* Путь к изображению "ouy.png" */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 144px; /* Размер иконки */
+    height: 144px;
+    position: absolute;
+    top: calc(100% - 125px); /* Расположение рядом с кнопкой Add NFT */
+    right: -22px; /* Расположение справа от кнопки */
+  }
+
+  .button {
+    background-image: linear-gradient(to bottom, #2b87d9, #5d1ad0);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    width: 500px; /* Fixed width or percentage as needed */
+    margin-top: 20px; /* Space above the button */
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <div class="image-upload" onclick="document.getElementById('fileInput').click()">
+      <i id="fAwesome" class="fa-solid fa-square-plus fa-4x" style="color: grey;"></i>
+      <img id="uploadedImage" style="display: none;">
+      <input type="file" id="fileInput" accept="image/*" onchange="previewImage()" style="display: none;">
+    </div>
+
+    <div class="form-fields">
+      <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <option value="en" selected>EN</option>
+        <option value="ru">RU</option>
+        <option value="kz">KZ</option>
+      </select>
+      <input type="text" class="input-field" id="nameid" placeholder="Name">
+      <select id="category">
+        <option id="categoryid" value="" disabled selected>Categories</option>
+        <option id="artid" value="art">Art</option>
+        <option id="sportid" value="sport">Sport</option>
+      </select>
+      <input type="text" class="input-field" id="priceid" placeholder="Price">
+      <textarea class="input-field" id="descriptionid" placeholder="Description"></textarea>
+    </div>
+  </div>
+
+  <button class="button" id="nftbtnid" onclick="addNFT()">Add NFT</button>
+  <div class="upload-icon"></div>
+</div>
+
+<script>
+   function previewImage() {
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(document.getElementById("fileInput").files[0]);
+
+    if (fileInput.files && fileInput.files[0]) {
+      var oFReader = new FileReader();
+      oFReader.readAsDataURL(fileInput.files[0]);
+
+      oFReader.onload = function (oFREvent) {
+        document.getElementById("fAwesome").style.display = "none";
+        document.getElementById("uploadedImage").style.display = "block";
+        document.getElementById("uploadedImage").src = oFREvent.target.result;
+      };
+    }
+  }
+
+  function addNFT() {
+    var name = document.getElementById('nameid').value;
+    var price = document.getElementById('priceid').value;
+    var lang = document.getElementById('languageSelect').value;
+
+    // Validate Name
+    if (!/^[a-zA-Z]{2,}$/.test(name)) {
+      switch (lang) {
+        case 'en':
+          alert("Name should contain only letters and should be at least 2 characters long.");
+          break;
+        case 'ru':
+          alert("Имя должно содержать только английские буквы и не менее 2 символов.");
+          break;
+        case 'kz':
+          alert("Атауда тек ағылшын әріптері мен кемінде 2 таңба болуы қажет.");
+          break;
+      }
+      return;
+    }
+
+    // Validate Price
+    if (!/^\d+(\.\d{1,2})?$/.test(price)) {
+      switch (lang) {
+        case 'en':
+          alert("Price should contain only numbers.");
+          break;
+        case 'ru':
+          alert("Цена должна содержать только цифры.");
+          break;
+        case 'kz':
+          alert("Бағасында тек сандар болуы қажет.");
+          break;
+      }
+      return;
+    }
+
+    console.log("NFT added");
+  }
+
+  function changeLanguage(lang) {
+    const elements = Object.keys(data[lang]);
+    elements.forEach(element => {
+      document.getElementById(element).placeholder = data[lang][element];
+    });
+
+    const categories = document.getElementById('categoryid');
+    const art = document.getElementById('artid');
+    const sport = document.getElementById('sportid')
+    const nftbtn = document.getElementById('nftbtnid');
+
+    categories.textContent = data[lang].categoryid;
+    art.textContent = data[lang].artid;
+    sport.textContent = data[lang].sportid;
+    nftbtn.textContent = data[lang].nftbtnid;
+  }
+
+const data = {
+    "en":
+    {
+        "nameid": "Name",
+        "categoryid": "Categories",
+        "artid": "Art",
+        "sportid": "Sport",
+        "priceid": "Price",
+        "descriptionid":"Description",
+        "nftbtnid": "Add NFT"
+    },
+    "ru":
+    {
+        "nameid": "Название",
+        "categoryid": "Категории",
+        "artid": "Искусство",
+        "sportid": "Спорт",
+        "priceid": "Цена",
+        "descriptionid":"Описание",
+        "nftbtnid": "Добавить NFT"
+    },
+    "kz":
+    {
+        "nameid": "Атауы",
+        "categoryid": "Категориялар",
+        "artid": "Өнер",
+        "sportid": "Спорт",
+        "priceid": "Бағасы",
+        "descriptionid":"Сипаттама",
+        "nftbtnid": "NFT қосу"
+    }
+}
+
+</script>
+</body>
+</html>
