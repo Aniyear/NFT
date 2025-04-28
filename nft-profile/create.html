@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica">
+<script src="https://kit.fontawesome.com/f47346a7bc.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add NFT</title>
+<link rel="stylesheet" href="css/create.css">
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <div class="image-upload" onclick="document.getElementById('fileInput').click()">
+      <i id="fAwesome" class="fa-solid fa-square-plus fa-4x" style="color: grey;"></i>
+      <img id="uploadedImage" style="display: none;">
+      <input type="file" id="fileInput" accept="image/*" onchange="previewImage()" style="display: none;">
+    </div>
+
+    <div class="form-fields">
+      <select id="languageSelect" onchange="changeLanguage(this.value)">
+        <option value="en" selected>EN</option>
+        <option value="ru">RU</option>
+        <option value="kz">KZ</option>
+      </select>
+      <input type="text" class="input-field" id="nameid" placeholder="Name">
+      <select id="category">
+        <option id="categoryid" value="" disabled selected>Categories</option>
+        <option id="artid" value="art">Art</option>
+        <option id="sportid" value="sport">Sport</option>
+      </select>
+      <input type="text" class="input-field" id="priceid" placeholder="Price">
+      <textarea class="input-field" id="descriptionid" placeholder="Description"></textarea>
+    </div>
+  </div>
+
+  <button class="button" id="nftbtnid" onclick="addNFT()">Add NFT</button>
+  <div class="upload-icon"></div>
+</div>
+
+<script src="js/gg.js"></script>
+</body>
+</html>

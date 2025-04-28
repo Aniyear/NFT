@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Marketplace - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/profile.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <div class="container">
+        <div class="left-aligned">
+          <div class="logo">
+            <img src="assets/oiyu.png" alt="Site Logo" />
+          </div>
+          <h1><a href="create.html" class="a_title">ART OF GRADA</a></h1>
+        </div>
+        <div class="search-bar">
+          <img
+            src="assets/search-01.png"
+            alt="search"
+            class="search-bar-icon"
+          />
+          <input type="search" id="search-text" placeholder="Search" />
+        </div>
+        <div class="buttons">
+          
+          
+          <button>
+            <img src="assets/calc.png" alt="Calculator" /><a href="/#"></a>
+          </button>
+          <button>
+            <img src="assets/plus.png" alt="Collections" /><a href="#"></a>
+          </button>
+          <button>
+            <img src="assets/user.png" alt="Profile" /><a href="#"></a>
+          </button>
+          <button>
+            <img src="assets/cart.png" alt="Cart" /><a href="#"></a>
+          </button>
+          <div class="buttons">
+            <div class="dropdown">
+               <button type="button" data-toggle="dropdown"><img src="assets\globe.svg"></i>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#"style="color: aliceblue;" onclick="translatePage('en')"><img src="assets/en.svg" style="width: 1.2vw;
+                      margin-right: 1vw; display: inline;">English</a></li>
+                    
+                    <li><a href="#" style="color: aliceblue;" onclick="translatePage('ru')"><img src="assets/russia.svg" style="width: 1.2vw;
+                      margin-right: 1vw; display: inline;">Русский</a></li>
+                    
+                    <li><a href="#" style="color: aliceblue;" onclick="translatePage('kk')"><img src="assets/kazakh.png" style="width: 1.2vw;
+                      margin-right: 1vw; display: inline;">Қазақша</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="profile-card">
+        <div class="union-container">
+          <p class="description" id="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <img src="assets/Union.png" alt="Union" class="union" />
+          <img src="assets/circle-oiyu.png" alt="oiyu" class="center-image" />
+          <img
+            src="assets/profile.png"
+            alt="profile.jpg"
+            class="profile-image"
+          />
+          <div class="username" id="username">Username</div>
+            <div class="profile-info">
+                <p><span id="items">Items:</span> 100</p>
+                <p><span id="created">Created:</span> Apr 2024</p>
+                <p><span id="chain">Chain:</span> Ethereum</p>
+                <p><span id="earnings">Earnings:</span> 5%</p>
+            </div>
+            <div class="additional-info">
+                <div class="info-item"><span id="totalValue">Total Value</span> 309ETH</div>
+                <div class="info-item"><span id="floorPrice">Floor Price</span> 0.0045 ETH</div>
+                <div class="info-item"><span id="bestOffer">Best Offer</span> 0.00147 ETH</div>
+                <div class="info-item"><span id="owners">Owners</span> 835 (25%)</div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Main Section -->
+      <section class="settings-section">
+        <aside class="settings-sidebar" >
+          <div class="f-button">
+            <button id="myArtworksButton">My Artworks</a></button>
+          </div>
+          <div class="s-and-t-button">
+            <button id="ownedButton">Owned</button>
+            <button id="likedButton" >Liked</button>
+          </div>
+          <button id="createButton"><a href="create.html"></a>Create</button>
+          <button id="settingsButton">Settings</button>
+        </aside>
+
+        <!-- Artworks Section  -->
+        <section class="artworks-main" id="artworksMainSection" >
+          <!-- Top buttons -->
+          <div class="top-buttons">
+            <button class="Collections"><a href="#">Collections</a></button>
+            <button class="NFTs"><a href="#">NFT</a></button>
+            <button class="Search">Search</button>
+          </div>
+          <!-- NFT cards grid -->
+          <div class="nft-cards-grid" >
+          </div>
+          
+          <div class="div-but">
+          <button id="prevPageButton" class="carousel-but"><</button>
+          <button id="nextPageButton" class="carousel-but">></button>
+          </div>
+        </section>
+
+        <!-- Owned Section  -->
+        <section class="owned-main" id="ownedMainSection" >
+          <!-- Top buttons -->
+          <div class="top-buttons">
+            <button class="Collections"><a href="#">Collections</a></button>
+            <button class="NFTs"><a href="#">NFT</a></button>
+            <button class="Search">Search</button>
+          </div>
+          <!-- NFT cards grid -->
+          <div class="nft-cards-grid" >
+          </div>
+          
+          <div class="div-but">
+          <button id="prevPageButton2" class="carousel-but"><</button>
+          <button id="nextPageButton2" class="carousel-but">></button>
+          </div>
+        </section>
+
+        <!-- Liked Section  -->
+        <section class="liked-main" id="likedMainSection" >
+          <!-- Top buttons -->
+          <div class="top-buttons">
+            <button class="Collections"><a href="#">Collections</a></button>
+            <button class="NFTs"><a href="#">NFT</a></button>
+            <button class="Search">Search</button>
+          </div>
+          <!-- NFT cards grid -->
+          <div class="nft-cards-grid" >
+          </div>
+          
+          <div class="div-but">
+          <button id="prevPageButton1" class="carousel-but"><</button>
+          <button id="nextPageButton1" class="carousel-but">></button>
+          </div>
+        </section>
+
+        <!-- settings section  -->
+
+        <section class="settings-main" id="settingsMainSection">
+          <div class="user-info">
+            <div class="user-photo" style="background-image: url(./assets/profile.png); background-size: contain;" onclick="document.getElementById('fileInput').click()">
+              <i id="fAwesome" class="fa-solid fa-square-plus fa-4x" style="color: grey;"></i>
+              <img id="uploadedImage" style="display: none;">
+              <input type="file" id="fileInput" accept="image/*" onchange="previewImage()" style="display: none;">
+            </div>
+            <p id="userInfo">Username</p>
+        </div>
+        <!-- Settings Form -->
+        <div class="form-group">
+            <label for="name" id="nameLabel">Name</label>
+            <input type="text" id="name" name="name" />
+        </div>
+
+        <div class="form-group">
+            <label for="surname" id="surnameLabel">Surname</label>
+            <input type="text" id="surname" name="surname" />
+        </div>
+
+        <form class="form-group">
+            <label for="description" id="descriptionLabel">Description</label>
+            <textarea id="description" name="description"></textarea>
+        </form>
+
+        <div>
+            <div class="form-group">
+                <label for="email" id="emailLabel">E-mail</label>
+                <input type="text" id="email" name="emial" />
+            </div>
+
+            <div class="form-group">
+                <label for="timezone" id="timezoneLabel">Timezone</label>
+                <select id="timezone" name="timezone">
+                    <option value="GMT-12">GMT +0</option>
+                    <option value="GMT-12">GMT +1</option>
+                    <option value="GMT-11">GMT +2</option>
+                    <option value="GMT-10">GMT +3</option>
+                    <option value="GMT-10">GMT +4</option>
+                    <option value="GMT-10">GMT +5</option>
+                    <option value="GMT-10">GMT +6</option>
+                    <option value="GMT-10">GMT +7</option>
+                    <option value="GMT-10">GMT +8</option>
+                    <option value="GMT-10">GMT +9</option>
+                    <option value="GMT-10">GMT +10</option>
+                    <option value="GMT-10">GMT +11</option>
+                    <option value="GMT-10">GMT +12</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password" id="passwordLabel">Password</label>
+            <input type="password" id="password" name="password" />
+        </div>
+
+        <div class="form-group">
+            <label for="passwordConfirm" id="passwordConfirmLabel">Confirm password</label>
+            <input type="password" id="passwordConfirm" name="passwordConfirm" />
+        </div>
+
+        <div style="display: inline">
+            <button id="saveButton" class="active">Save</button>
+        </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+          <p>Join the community</p>
+          <div class="footer-social-media-links">
+              <ul>
+                  <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                  <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                  <li><a href=""><i class="fab fa-discord"></i></a></li>
+              </ul>
+          </div>
+          <div class="footer-contact-text">Contacts: +012 3456789</div>
+          <div class="footer-email-text">Email: artofgrada@gmail.com</div>
+      </div>
+  </footer>
+
+    <script src="js/profile.js"></script>
+    <script src="js/gg.js"></script>
+  </body>
+</html>

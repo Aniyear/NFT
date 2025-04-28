@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../resources/ФОН\ ПРОФИЛЬ.png'); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    height: 100vh;
+    background-color: rgb(0, 1, 21);
+    
+    font-family: 'Nunito', sans-serif;
+}
+
+
+/* Profile */
+
+.profile-container {
+    padding: 10vw 20vh;
+    
+}
+
+.profile-information {
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(90deg, rgb(78, 78, 78), rgba(255,255,255));
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(90deg, rgb(158, 158, 158), rgba(255,255,255,0.3));
+    position: relative;
+}
+
+.profile-information img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20vw;
+    border-radius: 50%;
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0.3) 50%,rgba(255, 255, 255, 0) 50%);
+    border: 1px solid white;
+    transform: translate(-50%, -50%)
+}
+
+/* NFT Information */
+
+.nft-container {
+    padding: 10vh 10vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+}
+
+.nft-information {
+    width: 100%;
+    background:linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255,255,255,0.1));
+    padding: 2vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    border-radius: 1vw;
+}
+
+.nft-image {
+    font-size: 1.1vw;
+    text-align: center;
+    color: white;
+}
+
+.nft-image img{
+    width: 25vw;
+    box-shadow: -1px 2px 88px -23px rgba(0,9,185,0.8);
+}
+
+.nft-information-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25vw;
+}
+
+.nft-information-container p{
+    font-size: 1.2vw;
+}
+
+.nft-information-container h1{
+    font-size: 2vw;
+}
+
+.nft-information-button {
+    display: flex;
+    gap: 1vw;
+}
+
+.nft-information-button button{
+    color: white;
+    outline: none;
+    border: none;
+    background:linear-gradient(225deg,#00E0FF, #671AE4);
+    border-radius: 1vw;
+    font-size: 1vw;
+    
+}
+
+.border-oyu {
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-85%,-85%);
+}
+
+.buy-button {
+    padding: 2vh 6vw;
+}
+
+.add-to-cart-button, .like-button {
+    padding: 2vh;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-social-media-links ul{
+    display: flex;
+    padding: 0 10px;
+    list-style: none;
+    gap: 2vw;
+    color: #fff;
+}
+
+.footer-social-media-links ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-social-media-links ul li a:hover {
+    color: rgb(255, 0, 0);
+}

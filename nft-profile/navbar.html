@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="nft_description_page">Document</title>
+
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/profile.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <nav>
+        <div class="container">
+          <div class="left-aligned">
+            <div class="logo">
+              <img src="assets/oiyu.png" alt="Site Logo" />
+            </div>
+            <h1><a href="create.html" class="a_title">ART OF GRADA</a></h1>
+          </div>
+          <div class="search-bar">
+            <img
+              src="assets/search-01.png"
+              alt="search"
+              class="search-bar-icon"
+            />
+            <input type="search" id="search-text" placeholder="Search" />
+          </div>
+          <div class="buttons">
+            
+            
+            <button>
+              <img src="assets/calc.png" alt="Calculator" /><a href="/#"></a>
+            </button>
+            <button>
+              <img src="assets/plus.png" alt="Collections" /><a href="#"></a>
+            </button>
+            <button>
+              <img src="assets/user.png" alt="Profile" /><a href="#"></a>
+            </button>
+            <button>
+              <img src="assets/cart.png" alt="Cart" /><a href="#"></a>
+            </button>
+            <div class="dropdown">
+                <button type="button" data-toggle="dropdown">
+                    <img src="assets/globe.svg" alt="Globe">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-btn="en" style="color: aliceblue;" onclick="translatePage('en')">
+                        <img src="assets/en.svg" style="width: 1.2vw; margin-right: 1vw; display: inline;">English</a>
+                    </li>
+                    <li><a href="#" data-btn="ru" style="color: aliceblue;" onclick="translatePage('ru')">
+                        <img src="assets/russia.svg" style="width: 1.2vw; margin-right: 1vw; display: inline;">Русский</a>
+                    </li>
+                    <li><a href="#" data-btn="kk" style="color: aliceblue;" onclick="translatePage('kk')">
+                        <img src="assets/kazakh.png" style="width: 1.2vw; margin-right: 1vw; display: inline;">Қазақша</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        </div>
+      </nav>
+    <div class="nft-container">
+        <div class="nft-information">
+            <img class="border-oyu" src="resources/oyu2.png">
+            <div class="nft-image">
+                <img  src="resources/image (2).png">
+                <p>Created Apr 2024 | Chain Ethereum</p>
+            </div>
+            <div class="nft-information-container">
+                <div>
+                    <h1 data-lang="nft_description_container_title">NFT name</h1>   
+                    <p data-lang="nft_description_container_author">Author or Collection name</p>
+                    <p data-lang="nft_description_container_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                </div>
+                
+                
+                <div class="nft-information-below-section">
+                    <p></p>
+                    <div class="nft-information-button">
+                        <button class="buy-button" data-lang="nft_description_container_order_btn">Place a bid</button>
+                        <button class="like-button"><i class="far fa-heart" style="-webkit-text-stroke: 1px rgb(255, 255, 255);color: transparent;"></i></button>
+                        <button class="add-to-cart-button"><i class="fas fa-shopping-cart" style="-webkit-text-stroke: 1px rgb(255, 255, 255);color: transparent;"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>Join the community</p>
+            <div class="footer-social-media-links">
+                <ul>
+                    <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a href=""><i class="fab fa-discord"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-contact-text">Contacts: +012 3456789</div>
+            <div class="footer-email-text">Email: artofgrada@gmail.com</div>
+        </div>
+    </footer>
+
+    <script src="js/lang.js"></script>
+    <script src="js/navbar.js"></script>
+</body>
+</html>
