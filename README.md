@@ -137,9 +137,3 @@ This application is deployed on **Render.com**.
 
 **Live URL:** [https://nft-marketplace-cymh.onrender.com](https://nft-marketplace-cymh.onrender.com)
 
----
-
-## Authors / Contributors
-
-- **Aniyar Baibossyn**
-- **Rakhim Azimzhanov**
